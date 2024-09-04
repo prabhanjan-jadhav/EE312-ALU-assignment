@@ -3,6 +3,13 @@ Multiplication Module
 Overview:
 Input: Two 8-bit Posit numbers to be multiplied.
 Output: An 8-bit Posit number representing the product.
+Explanation:
+    ● Posit Decoders: Two instances of the PositDecoder module decode the inputs into their respective components.
+    ● Output Sign: The sign of the product is determined by the XOR of the signs of the inputs.
+    ● Total Exponent Calculation: The total exponent for the product is the sum of the exponents of the inputs.
+    ● Significand Multiplication: The significands of the inputs are multiplied.
+    ● Normalization: The product is normalized to ensure it fits the Posit format, using the normalize_product helper module.
+    ● Result Construction: The result is constructed from the normalized components.
 */
 module PositMul(
     input [7:0] posit1,
